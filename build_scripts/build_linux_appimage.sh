@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "Installing required packaging libraries..."
+echo "Installing required packaging libraries and project dependencies..."
 pip install pyinstaller Pillow
+pip install -r requirements_linux.txt
 
 echo "Generating generic app icons..."
 python build_scripts/create_icon.py

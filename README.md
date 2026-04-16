@@ -32,6 +32,16 @@ Frustrated by the friction, I thought: **"You know what? Why wouldn't I create o
 
 ---
 
+## 🏗️ Architecture
+
+Zenith Auto Clicker is designed with a modular architecture to separate the user interface from the underlying input simulation and targeting logic:
+
+* **GUI Layer (`gui/`)**: Built using PyQt6, managing the user interface, input validation, and user configuration. It runs on the main thread and communicates with the core logic.
+* **Core Logic (`core/`)**: Handles the actual clicking mechanism, loop control, randomization, and delay logic. This runs in a separate thread to prevent freezing the GUI while clicking.
+* **Platform-Specific Handlers**: Input simulation (mouse events) and application window targeting (getting coordinates or locking to a specific window) are abstracted and handled differently depending on the operating system (e.g., using `pynput` or `mouse` generically, and `xdotool` on X11 for window targeting).
+
+---
+
 ## 🎨 UI/UX Design Guidelines
 
 To maintain visual consistency with the Zenith brand, the graphical interface should strictly adhere to the following design system, inspired by our logo.
@@ -62,7 +72,7 @@ You will need Python 3.8 or later installed on your system.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/abumarar/ZenithAutoClicker.git](https://github.com/abumarar/ZenithAutoClicker.git)
+    git clone https://github.com/abumarar/ZenithAutoClicker.git
     cd ZenithAutoClicker
     ```
 
