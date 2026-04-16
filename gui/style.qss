@@ -1,0 +1,84 @@
+/* Typography & Core Adjustments */
+QWidget {
+    font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+    background-color: #0F172A; /* App Background (Deep Space Blue) */
+    color: #F8FAFC; /* Primary Text (Off-White) */
+    font-size: 14px;
+}
+
+/* Panel Backgrounds (Slate Gray) */
+QGroupBox {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 4px; /* Subtle rounding */
+    margin-top: 10px;
+    padding-top: 15px;
+    color: #F8FAFC;
+    font-weight: bold;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    margin-top: 0px;
+}
+
+/* Inputs & Dropdowns */
+QLineEdit, QComboBox, QSpinBox, QDoubleSpinBox {
+    background-color: #334155;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    padding: 5px;
+    color: #F8FAFC;
+}
+
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #00E5FF; /* Electric Cyan on focus */
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #38BDF8; /* Steel Blue by default / Secondary Accent */
+    color: #0F172A;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #00E5FF; /* Electric Cyan on hover */
+}
+
+QPushButton:pressed {
+    background-color: #0ea5e9;
+}
+
+/* Specific START and STOP buttons */
+QPushButton#startBtn {
+    background-color: #00E5FF; /* Electric Cyan */
+    color: #0F172A;
+}
+
+QPushButton#startBtn:hover {
+    background-color: #67e8f9;
+}
+
+QPushButton#stopBtn {
+    background-color: #E11D48; /* Destructive */
+    color: #F8FAFC;
+}
+
+QPushButton#stopBtn:hover {
+    background-color: #f43f5e;
+}
+
+/* Labels */
+QLabel {
+    color: #F8FAFC;
+}
+
+QLabel#secondaryText {
+    color: #94A3B8; /* Muted Gray for minor labels */
+    font-size: 12px;
+}
