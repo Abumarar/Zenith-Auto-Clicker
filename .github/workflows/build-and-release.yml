@@ -31,9 +31,10 @@ jobs:
 
       - name: Compile Inno Setup Installer
         run: |
-          "C:\Program Files (x86)\Inno Setup 6\iscc.exe" build_scripts\zenith_windows.iss
+          & "C:\Program Files (x86)\Inno Setup 6\iscc.exe" build_scripts\zenith_windows.iss
         
-      - name: Upload Windows Asset
+      - name: Upload Windows Asset to Release
+        if: github.event_name == 'release'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,6 +43,12 @@ jobs:
           asset_path: dist/Zenith_Setup.exe
           asset_name: Zenith_Setup_Windows.exe
           asset_content_type: application/octet-stream
+
+      - name: Upload Windows Artifact (for manual runs)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Zenith_Setup_Windows
+          path: dist/Zenith_Setup.exe
 
   build-linux:
     runs-on: ubuntu-latest
@@ -62,7 +69,8 @@ jobs:
           chmod +x build_scripts/build_linux_appimage.sh
           bash build_scripts/build_linux_appimage.sh
 
-      - name: Upload Linux Asset
+      - name: Upload Linux Asset to Release
+        if: github.event_name == 'release'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,3 +79,9 @@ jobs:
           asset_path: ZenithAutoClicker-x86_64.AppImage
           asset_name: ZenithAutoClicker-Linux-x86_64.AppImage
           asset_content_type: application/x-executable
+
+      - name: Upload Linux Artifact (for manual runs)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ZenithAutoClicker-Linux-x86_64
+          path: ZenithAutoClicker-x86_64.AppImage
