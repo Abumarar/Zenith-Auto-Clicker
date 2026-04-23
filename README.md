@@ -8,13 +8,7 @@ A sophisticated, modern, and cross-platform graphical auto clicker, designed for
 
 ## 📖 The Story
 
-While immersed in a particularly grindy session of **Minecraft**, trying to optimize a zombie spawner XP farm, I realized I was spending more time standing in one spot than actually playing. I wanted a simple tool that would click my mouse for me, collecting experience points automatically, so I could step away and, you know, **eat**.
-
-I began searching for auto clickers, looking for a simple utility that offered a graphical interface and decent customization. But I quickly ran into issues: options were outdated, restricted to a single OS, or lacked the specific targeted-application locking I needed.
-
-Frustrated by the friction, I thought: **"You know what? Why wouldn't I create one?"**
-
-**Zenith Auto Clicker** is the result of that frustration—a lightweight, capable clicker that just works, exactly how you expect it to.
+**Zenith Auto Clicker** is just a project I built for fun. I wanted a simple tool to click my mouse for me and thought it would be a great way to learn and create a lightweight, capable clicker that just works, exactly how you expect it to.
 
 ---
 
